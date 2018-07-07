@@ -1,6 +1,9 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/xrdcode/aws-hack/handler"
+)
 
 func main() {
 	r := gin.Default()
@@ -9,5 +12,8 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	r.POST("/upload", handler.Uploadimg)
+
 	r.Run()
 }
